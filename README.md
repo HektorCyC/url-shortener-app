@@ -83,6 +83,8 @@ npm install
 ```
 cdk synth
 ```
+This will output to the ``cdk.out`` directory, where you can review the template before deploying.
+
 4. Deploy your infrastructure.
 ```
 cdk deploy

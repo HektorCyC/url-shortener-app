@@ -59,6 +59,9 @@ export class IacStack extends Stack {
       deployOptions: {
         stageName: 'prod'
       },
+      defaultCorsPreflightOptions: {
+        allowOrigins: apigw.Cors.ALL_ORIGINS
+      },
       retainDeployments: false
     });
     /**

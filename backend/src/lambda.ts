@@ -23,6 +23,7 @@ async function bootstrapServer(): Promise<Server> {
     );
     nestApp.use(eventContext());
     nestApp.useGlobalPipes(new ValidationPipe());
+    nestApp.enableCors();
     await nestApp.init();
     cachedServer = createServer(expressApp, undefined, binaryMimeTypes);
   }

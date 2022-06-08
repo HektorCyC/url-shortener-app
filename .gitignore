@@ -105,7 +105,8 @@ dist
 
 # DynamoDB Local files
 .dynamodb/
-
+.cdk.staging
+cdk.out/
 # TernJS port file
 .tern-port
 
