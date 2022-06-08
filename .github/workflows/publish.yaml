@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ master ]
 
-name: Node Project `my-app` CI on ECR
+name: Publish Docker Image to ECR
 
 jobs:
   deploy:
