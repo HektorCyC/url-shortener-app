@@ -1,6 +1,6 @@
 FROM public.ecr.aws/lambda/nodejs:14
 
-COPY . .
+COPY ./backend .
 
 RUN npm run build
 
