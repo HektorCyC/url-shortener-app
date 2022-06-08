@@ -1,11 +1,19 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { DynamooseModule } from 'nestjs-dynamoose';
 import { HandlerModule } from './handler/handler.module';
 
 @Module({
-  imports: [HandlerModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    DynamooseModule.forRoot({
+      aws: { region: 'us-east-1' },
+      model: {
+        create: false,
+        suffix: '-table',
+      },
+    }),
+    HandlerModule
+  ],
+  controllers: [],
+  providers: [],
 })
-export class AppModule {}
+export class AppModule { }
