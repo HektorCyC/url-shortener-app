@@ -13,11 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Url Shortener Demo',
-        theme: ThemeData(
-          backgroundColor: Colors.white,
-          primarySwatch: Colors.grey,
-        ));
+      title: 'Url Shortener Demo',
+      theme: ThemeData(
+        backgroundColor: Colors.white,
+        primarySwatch: Colors.grey,
+      ),
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const MyHomePage(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/shorter/:id': (context) => const UrlShorterPage(),
+      },
+    );
   }
 }
 
