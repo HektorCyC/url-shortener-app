@@ -14,7 +14,7 @@ export class HandlerController {
   }
   @Get()
   sampleGet(@Res() res: Response) {
-    return res.send({ hi: "hello" })
+    return res.send({ healthCheck: "healthy" })
   }
 
   @Get(':id')

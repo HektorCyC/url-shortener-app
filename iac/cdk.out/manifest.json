@@ -1,0 +1,192 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "url-shortener-stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "url-shortener-stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "url-shortener-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "url-shortener-stack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/204efdae99fbcec56f31ee3e2bf7a9c35ae4fde33ff31eface4660ae06a5ce08.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "url-shortener-stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "url-shortener-stack.assets"
+      ],
+      "metadata": {
+        "/url-shortener-stack/url-shortener-table": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "urlshortenertable1148BB8B"
+            }
+          }
+        ],
+        "/url-shortener-stack/url-shortener-table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "urlshortenertable1148BB8B"
+          }
+        ],
+        "/url-shortener-stack/lambda-execution-role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaexecutionroleA5050CA0"
+          }
+        ],
+        "/url-shortener-stack/lambda-execution-role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaexecutionroleDefaultPolicy22D63868"
+          }
+        ],
+        "/url-shortener-stack/url-shortener-repo/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "urlshortenerrepo7D49C364"
+          }
+        ],
+        "/url-shortener-stack/shorturl-docker-fn/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "shorturldockerfn8751F43F"
+          }
+        ],
+        "/url-shortener-stack/shorturl-docker-fn/InvokeFcyXBRX02EWa52GlF+ECQiCzDt0fdRUDi4mo4foC5aU=": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "shorturldockerfnInvokeFcyXBRX02EWa52GlFECQiCzDt0fdRUDi4mo4foC5aU07F0E257"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwB8E7369F"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwCloudWatchRole0F464456"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwAccountB9D7CB83"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwDeploymentD59A43501cbcca00c8ba8dfa6fd1061d0e7f74cc"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwDeploymentStageprod095F98B8"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwEndpoint5D5D286B"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwproxyEA3E3BC2"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/{proxy+}/ANY/ApiPermission.urlshortenerstackLambdaApigw9B5069F8.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwproxyANYApiPermissionurlshortenerstackLambdaApigw9B5069F8ANYproxyCDEE418A"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/{proxy+}/ANY/ApiPermission.Test.urlshortenerstackLambdaApigw9B5069F8.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwproxyANYApiPermissionTesturlshortenerstackLambdaApigw9B5069F8ANYproxy3FC737E4"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwproxyANY0A4EE26C"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/ANY/ApiPermission.urlshortenerstackLambdaApigw9B5069F8.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwANYApiPermissionurlshortenerstackLambdaApigw9B5069F8ANY083410E3"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/ANY/ApiPermission.Test.urlshortenerstackLambdaApigw9B5069F8.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwANYApiPermissionTesturlshortenerstackLambdaApigw9B5069F8ANY404DF3D5"
+          }
+        ],
+        "/url-shortener-stack/LambdaApigw/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaApigwANYB0017F93"
+          }
+        ],
+        "/url-shortener-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/url-shortener-stack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/url-shortener-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/url-shortener-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "url-shortener-stack"
+    }
+  }
+}
