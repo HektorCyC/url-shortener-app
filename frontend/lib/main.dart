@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:url_shortener_frontend/pages/url_shorter.dart';
 import 'package:qlevar_router/qlevar_router.dart';
 import 'package:url_shortener_frontend/routes/app_router.dart';
-
-import 'components/urlshortenerbar.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
