@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel, Model } from 'nestjs-dynamoose';
 import HashGenerator from 'src/utils/hash-generator';
 import { IShortUrl, UrlKey } from '../model/short-url-interface';
-import * as uuid from 'uuid';
 import { UrlInputModel } from '../model/url-input-model';
+
 @Injectable()
 export class HandlerService {
   constructor(

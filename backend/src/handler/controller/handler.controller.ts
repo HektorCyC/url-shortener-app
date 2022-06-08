@@ -18,8 +18,11 @@ export class HandlerController {
   }
 
   @Get(':id')
-  findUrl(@Param('id') id: UrlKey) {
-    return this.handlerService.findById(id);
+  async findUrl(@Param('id') id: UrlKey, @Res() res: Response) {
+    const response = await this.handlerService.findById(id)
+    if (!response) return res.status(404).json({ errorCode: "404", error: "Record not found" });
+    return res.status(200).json(response);
+
   }
 
   @Patch(':id')
